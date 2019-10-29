@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane onKeyPressed="#keyHandler" prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: darkgrey;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.polsl.bol.krzysztof.lab1.controller.Controller">
+  <children>
+    <Canvas fx:id="gameCanvas" height="600.0" layoutX="10.0" layoutY="10.0" width="800.0" />
+    <Button layoutX="880.0" layoutY="530.0" mnemonicParsing="false" onAction="#startGame" text="Start game" />
+    <Label layoutX="865.0" layoutY="425.0" text="Score:">
+      <font>
+        <Font size="20.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label fx:id="playerScoreLabel" font="$x1" layoutX="930.0" layoutY="425.0" prefWidth="48.0" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dfdfdf00" height="600.0" layoutX="10.0" layoutY="10.0" opacity="1.0" stroke="BLACK" strokeType="INSIDE" visible="true" width="800.0" />
+    <Label layoutX="828.0" layoutY="14.0" prefHeight="88.0" prefWidth="158.0" text="SNAKE" textAlignment="LEFT">
+      <font>
+        <Font name="Papyrus" size="30.0" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="810.0" layoutY="385.0" text="Player:" />
+    <Label fx:id="gameOverLabel" layoutX="158.0" layoutY="226.0" prefHeight="166.0" prefWidth="482.0" text="" textAlignment="CENTER" textFill="RED">
+      <font>
+        <Font size="25.0" />
+      </font>
+    </Label>
+    <TextField fx:id="playerNameTextField" layoutX="876.0" layoutY="390.0" prefWidth="124.0" text=" ds"/>
+  </children>
+</AnchorPane>
