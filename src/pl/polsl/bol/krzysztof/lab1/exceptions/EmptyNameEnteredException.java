@@ -20,7 +20,7 @@ public class EmptyNameEnteredException extends Exception {
      *
      * @param message display message
      */
-    public EmptyNameEnteredException(String message) {
-        super(message);
+    public EmptyNameEnteredException(String msessage) {
+        super(msessage);
     }
 }
