@@ -1,7 +1,7 @@
 package pl.polsl.bol.krzysztof.lab2.models;
 
 /**
- * Directions that {@link Snake} head can be moved in: null {@link #NONE}, 
+ * Directions that {@link Snake} head can be moved in: {@link #NONE},
  * {@link #UP},
  * {@link #DOWN},
  * {@link #LEFT},

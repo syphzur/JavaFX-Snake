@@ -23,7 +23,7 @@ public class MainApp extends Application {
      *
      * @param primaryStage primary stage for this application, onto which scene
      * can be set
-     * @throws IOException
+     * @throws IOException when failed to load file.
      */
     @Override
     public void start(Stage primaryStage) throws IOException {

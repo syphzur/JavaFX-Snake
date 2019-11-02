@@ -64,7 +64,10 @@ public class Controller implements Initializable {
      */
     @FXML
     private TextField playerNameTextField;
-    
+
+    /**
+     * Variable used to block keyboard input.
+     */
     private boolean canHandleKey;
 
     /**
@@ -141,7 +144,7 @@ public class Controller implements Initializable {
     private void keyHandler(KeyEvent e) {
         if (canHandleKey) {
             game.processDirectionChange(e.getCode());
-            canHandleKey = false; 
+            canHandleKey = false;
         }
     }
 
@@ -189,7 +192,7 @@ public class Controller implements Initializable {
              * Previous update time given in nanoseconds.
              */
             private long prevUpdateTime = 0;
-             /**
+            /**
              * One frame time given in nanoseconds at the begining of the game.
              */
             private final long startingFrameTime = 100_000_000; // = 0.1 s 
@@ -215,10 +218,9 @@ public class Controller implements Initializable {
                     return;
                 }
                 game.update();
-                frameTime = (long)(startingFrameTime / game.getSnake().getSnakeSpeed());
+                frameTime = (long) (startingFrameTime / game.getSnake().getSnakeSpeed());
                 draw(gameGraphicsContext);
-                if (!canHandleKey)
-                {
+                if (!canHandleKey) {
                     canHandleKey = true;
                 }
                 prevUpdateTime = now;

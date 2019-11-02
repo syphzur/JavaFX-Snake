@@ -1,8 +1,7 @@
 package pl.polsl.bol.krzysztof.lab2.exceptions;
 
 /**
- * Exception class for objects thrown when attempting to enter empty
- * {@link Player} name.
+ * Exception class for objects thrown when attempting to enter empty name.
  *
  * @author Krzysztof Ból
  * @version 1.0

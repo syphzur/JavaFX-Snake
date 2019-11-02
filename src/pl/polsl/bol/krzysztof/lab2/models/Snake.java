@@ -16,7 +16,7 @@ public class Snake {
      * Integer representing the size of one body segment.
      */
     private final int BODY_SEGMENT_SIZE = 20;
-    
+
     /**
      * Double representing the speed of snake movement.
      */
@@ -129,12 +129,12 @@ public class Snake {
     public double getSnakeSpeed() {
         return snakeSpeed;
     }
-    
+
     /**
      * Sets the value of private field {@link #snakeSpeed}.
      *
      * @param snakeSpeed double representing the speed of snake
-     * 
+     *
      */
     public void setSnakeSpeed(double snakeSpeed) {
         this.snakeSpeed = snakeSpeed;

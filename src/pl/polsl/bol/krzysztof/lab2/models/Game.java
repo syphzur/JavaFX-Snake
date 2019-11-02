@@ -44,6 +44,17 @@ public class Game {
     private boolean isGameOver;
 
     /**
+     * Integer representing the size of one body segment.
+     */
+    private final int FOOD_SIZE = 20;
+
+    /**
+     * Double representing value that is added to the snake's speed when
+     * collision with food occured.
+     */
+    private final double SPEED_STEP = 0.1;
+
+    /**
      * Constructs {@link Game} object with canvas size specified by parameters.
      *
      * @param gameCanvasHeight canvas height
@@ -65,28 +76,24 @@ public class Game {
      */
     public void update() {
         GameObject head = snake.getSnakeBody().get(0);
-        snake.move();
-
         //checks collision with borders
         if (collisionCheck(head)) {
             gameOver();
         }
-        
-        
         //checks collision with snake body
-        for (int i = 1; i < snake.getSnakeBody().size() - 1; i++) {
+        for (int i = 1; i < snake.getSnakeBody().size(); i++) {
             if (collisionCheck(head, snake.getSnakeBody().get(i))) {
                 gameOver();
             }
         }
-
         //checks collision with food
         if (collisionCheck(head, food)) {
             snake.addNewBodyPart();
             generateFood();
             player.setScore(player.getScore() + 1);
-            snake.setSnakeSpeed(snake.getSnakeSpeed() + 0.1);
+            snake.setSnakeSpeed(snake.getSnakeSpeed() + SPEED_STEP);
         }
+        snake.move();
     }
 
     /**
@@ -96,13 +103,12 @@ public class Game {
         Random random = new Random();
         int randomPositionX = random.nextInt(GAME_CANVAS_WIDTH / 20) * 20;
         int randomPositionY = random.nextInt(GAME_CANVAS_HEIGHT / 20) * 20;
-        this.food = new GameObject(new Point(randomPositionX, randomPositionY), Color.RED, 20);
-        for (GameObject obj: snake.getSnakeBody()) {
-            if (collisionCheck(obj, this.food))
-            {
+        this.food = new GameObject(new Point(randomPositionX, randomPositionY), Color.RED, FOOD_SIZE);
+        for (GameObject obj : snake.getSnakeBody()) {
+            if (collisionCheck(obj, this.food)) {
                 generateFood();
             }
-        }   
+        }
     }
 
     /**
